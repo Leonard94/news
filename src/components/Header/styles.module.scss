@@ -1,0 +1,44 @@
+@import '../../scss/variables.scss';
+@import '../../scss/typography.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+
+  background: $bg-light;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: $bg-accent;
+
+  svg {
+    max-width: 40px;
+    max-height: 40px;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.link {
+  @include menu;
+
+  &:hover {
+    color: $text-accent;
+  }
+}
+
+.active {
+  color: $text-accent;
+}

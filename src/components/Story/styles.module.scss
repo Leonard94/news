@@ -1,0 +1,58 @@
+@import '../../scss/variables.scss';
+@import '../../scss/typography.scss';
+
+.story {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  padding: 40px 50px;
+  border-radius: 2px;
+
+  position: relative;
+  background: $bg-light;
+
+  &:not(:last-child) {
+    margin-bottom: 2px;
+  }
+}
+
+.number {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  text-align: center;
+  line-height: 40px;
+  @include number;
+
+  background: $bg-accent;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 60px;
+
+  @include score;
+}
+
+.title {
+  display: block;
+  margin-bottom: 8px;
+
+  @include title;
+
+  &:hover {
+    color: $text-accent;
+  }
+}
+
+

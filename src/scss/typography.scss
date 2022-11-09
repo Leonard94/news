@@ -1,0 +1,76 @@
+@import '../scss/variables.scss';
+
+@mixin base {
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 100%;
+  color: $text-main;
+}
+
+@mixin title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 140%;
+  color: $text-main;
+}
+
+@mixin info {
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 120%;
+  color: $text-second;
+}
+
+@mixin number {
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 400;
+  color: $text-light;
+}
+
+@mixin score {
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 700;
+  color: $text-accent;
+}
+
+@mixin menu {
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $text-second;
+}
+
+@mixin btn {
+  font-family: 'Inter';
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+@mixin btn-small {
+  font-family: 'Inter';
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 100%;
+  color: $text-light;
+}
+
+@mixin comment {
+  font-family: 'Inter';
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 140%;
+  color: $text-main;
+}
