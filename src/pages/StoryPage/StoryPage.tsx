@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import { getItem } from '../../api/api'
 
 import { Button } from '../../components/Button/Button'
-import { Comments } from '../../components/Comments/Comments'
+import { Comments } from '../../components/CommentsList/CommentsList'
 import { Detail } from './components/Detail'
 
 type TStory = {
@@ -34,7 +34,7 @@ export const StoryPage = () => {
   const [loading, setLoading] = useState<TLoading>('pending')
 
   const handleGoBack = () => {
-    history.goBack()
+    history.push('/')
   }
 
   useEffect(() => {
@@ -47,11 +47,11 @@ export const StoryPage = () => {
   return (
     <section>
       <Button typeView='default' small onClick={handleGoBack}>
-        Вернуться
+        К списку новостей
       </Button>
       {loading === 'loading' && <div>Загрузка...</div>}
       {loading === 'fulfilled' && story && <Detail {...story} />}
-      {story?.kids.length && <Comments kids={story.kids} />}
+      {story?.kids?.length && <Comments kids={story.kids} />}
     </section>
   )
 }

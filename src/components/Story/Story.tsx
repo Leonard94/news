@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { ReactComponent as IconScore } from '../../assets/icons/score.svg'
+import { ReactComponent as IconScore } from '../../assets/icons/triangle.svg'
 
 import styles from './styles.module.scss'
 import { InfoAboutStory } from '../InfoAboutStory/InfoAboutStory'

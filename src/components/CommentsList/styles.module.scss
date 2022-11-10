@@ -1,0 +1,15 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  margin-top: 40px;
+}
+
+.comments {
+  margin-bottom: 40px;
+  
+  ul {
+    margin-left: 2%;
+  }
+}

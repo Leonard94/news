@@ -39,6 +39,7 @@ export const Comments: React.FC<TProps> = ({ kids }) => {
       handleGetComments()
     }
   }, [kids])
+
   return (
     <div className={styles.body}>
       {loading === 'loading' && <div>Загрузка комментариев</div>}
@@ -55,9 +56,11 @@ export const Comments: React.FC<TProps> = ({ kids }) => {
             </Button>
           )}
 
-          {comments.map((comment) => (
-            <Comment key={comment.id} {...comment} />
-          ))}
+          <ul className={styles.comments}>
+            {comments.map((comment) => (
+              <Comment key={comment.id} {...comment} />
+            ))}
+          </ul>
 
           <Button
             typeView='primary'
