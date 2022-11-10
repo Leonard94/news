@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { getComments } from '../../api/api'
 import { Button } from '../Button/Button'
 
-import { Comment } from './components/CommentItem/CommentItem'
+import { Comment } from './components/CommentItem/Comment'
 
 import styles from './styles.module.scss'
 
@@ -23,14 +23,19 @@ type TProps = {
 
 type TLoading = 'pending' | 'loading' | 'fulfilled'
 
-export const Comments: React.FC<TProps> = ({ kids }) => {
+export const CommentsList: React.FC<TProps> = ({ kids }) => {
   const [loading, setLoading] = useState<TLoading>('pending')
+  const [isLoadingUpdate, setIsLoadingUpdate] = useState(false)
   const [comments, setComments] = useState<TComment[] | null>(null)
 
   const handleGetComments = () => {
+    setIsLoadingUpdate(true)
     getComments(kids)
       .then((response: any) => setComments(response))
-      .finally(() => setLoading('fulfilled'))
+      .finally(() => {
+        setIsLoadingUpdate(false)
+        setLoading('fulfilled')
+      })
   }
 
   useEffect(() => {
@@ -42,13 +47,16 @@ export const Comments: React.FC<TProps> = ({ kids }) => {
 
   return (
     <div className={styles.body}>
-      {loading === 'loading' && <div>Загрузка комментариев</div>}
+      {loading === 'loading' && (
+        <div className={styles.loading}>Загрузка комментариев...</div>
+      )}
       {loading === 'fulfilled' && comments && (
         <>
           {comments.length > 4 && (
             <Button
               typeView='text'
               onClick={handleGetComments}
+              isLoading={isLoadingUpdate}
               style={{ marginBottom: '50px' }}
             >
               Обновить комментарии
@@ -64,6 +72,7 @@ export const Comments: React.FC<TProps> = ({ kids }) => {
           <Button
             typeView='primary'
             onClick={handleGetComments}
+            isLoading={isLoadingUpdate}
             style={{ marginBottom: '50px' }}
           >
             Обновить комментарии

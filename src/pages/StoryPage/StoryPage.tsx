@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import { getItem } from '../../api/api'
 
 import { Button } from '../../components/Button/Button'
-import { Comments } from '../../components/CommentsList/CommentsList'
+import { CommentsList } from '../../components/CommentsList/CommentsList'
 import { Detail } from './components/Detail'
 
 type TStory = {
@@ -51,7 +51,7 @@ export const StoryPage = () => {
       </Button>
       {loading === 'loading' && <div>Загрузка...</div>}
       {loading === 'fulfilled' && story && <Detail {...story} />}
-      {story?.kids?.length && <Comments kids={story.kids} />}
+      {story?.kids?.length && <CommentsList kids={story.kids} />}
     </section>
   )
 }

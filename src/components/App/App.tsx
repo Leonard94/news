@@ -1,9 +1,9 @@
 import { Route, Switch, Redirect } from 'react-router-dom'
 
 import { StoriesPage } from '../../pages/StoriesPage/StoriesPage'
-import { Header } from '../Header/Header'
-import { PageNotFound } from '../../pages/PageNotFound/PageNotFound'
 import { StoryPage } from '../../pages/StoryPage/StoryPage'
+import { PageNotFound } from '../../pages/PageNotFound/PageNotFound'
+import { Header } from '../Header/Header'
 
 export const App = () => {
   return (

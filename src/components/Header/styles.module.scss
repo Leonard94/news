@@ -7,6 +7,10 @@
   gap: 50px;
 
   background: $bg-light;
+
+  @media (max-width: 400px) {
+    gap: 20px;
+  }
 }
 
 .logo {

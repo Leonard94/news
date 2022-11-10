@@ -10,7 +10,7 @@
   border-width: 1px;
   border-style: solid;
 
-  @include btn-small;
+  @include btn;
 
   &_full {
     width: 100%;

@@ -15,6 +15,15 @@
   &:not(:last-child) {
     margin-bottom: 2px;
   }
+
+  @media (max-width: 700px) {
+    padding: 20px 25px;
+  }
+
+  @media (max-width: 500px) {
+    gap: 5px;
+    flex-direction: column;
+  }
 }
 
 .number {
@@ -26,12 +35,18 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  background: $bg-accent;
 
   text-align: center;
   line-height: 40px;
   @include number;
 
-  background: $bg-accent;
+  @media (max-width: 700px) {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    left: -10px;
+  }
 }
 
 .score {
@@ -42,6 +57,15 @@
   width: 60px;
 
   @include score;
+
+  @media (max-width: 700px) {
+    width: 40px;
+    gap: 5px;
+
+    svg {
+      width: 10px;
+    }
+  }
 }
 
 .title {
@@ -53,6 +77,8 @@
   &:hover {
     color: $text-accent;
   }
+
+  @media (max-width: 500px) {
+    text-align: center;
+  }
 }
-
-

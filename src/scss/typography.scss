@@ -16,6 +16,10 @@
   font-weight: 500;
   line-height: 140%;
   color: $text-main;
+
+  @media (max-width: 700px) {
+    font-size: 18px;
+  }
 }
 
 @mixin info {
@@ -25,6 +29,14 @@
   font-weight: 300;
   line-height: 120%;
   color: $text-second;
+
+  @media (max-width: 700px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 10px;
+  }
 }
 
 @mixin number {
@@ -33,6 +45,10 @@
   font-size: 18px;
   font-weight: 400;
   color: $text-light;
+
+  @media (max-width: 700px) {
+    font-size: 12px;
+  }
 }
 
 @mixin score {
@@ -41,6 +57,14 @@
   font-size: 18px;
   font-weight: 700;
   color: $text-accent;
+
+  @media (max-width: 700px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 12px;
+  }
 }
 
 @mixin menu {
@@ -50,21 +74,26 @@
   font-weight: 400;
   text-transform: uppercase;
   color: $text-second;
+
+  @media (max-width: 700px) {
+    font-size: 16px;
+  }
 }
 
 @mixin btn {
-  font-family: 'Inter';
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 100%;
-}
-
-@mixin btn-small {
   font-family: 'Inter';
   font-size: 16px;
   font-weight: 300;
   line-height: 100%;
   color: $text-light;
+
+  @media (max-width: 700px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 12px;
+  }
 }
 
 @mixin comment {
@@ -73,4 +102,12 @@
   font-weight: 300;
   line-height: 140%;
   color: $text-main;
+
+  @media (max-width: 700px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 12px;
+  }
 }

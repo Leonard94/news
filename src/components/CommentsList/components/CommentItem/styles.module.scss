@@ -58,6 +58,10 @@
   &_date {
     color: $text-second;
   }
+
+  @media (max-width: 700px) {
+    font-size: 10px;
+  }
 }
 
 .triangle {
