@@ -24,7 +24,6 @@ export const Story: React.FC<Tprops> = ({
   time,
   descendants,
   score,
-  kids,
 }) => {
   return (
     <div className={styles.story}>
@@ -37,11 +36,7 @@ export const Story: React.FC<Tprops> = ({
         <Link to={`/title/${id}`} className={styles.title} title='подробнее'>
           {title}
         </Link>
-        <InfoAboutStory
-          comments={descendants}
-          time={time}
-          by={by}
-        />
+        <InfoAboutStory comments={descendants} time={time} by={by} />
       </div>
     </div>
   )

@@ -1,27 +1,16 @@
 import { useEffect, useState } from 'react'
 
 import { getComments } from '../../api/api'
-import { Button } from '../Button/Button'
+import { TComment, TLoading } from '../../types'
 
+import { Button } from '../Button/Button'
 import { Comment } from './components/CommentItem/Comment'
 
 import styles from './styles.module.scss'
 
-type TComment = {
-  id: number
-  by: string
-  kids: number[]
-  parent: number
-  text: string
-  time: number
-  type: 'comment'
-}
-
 type TProps = {
   kids: number[]
 }
-
-type TLoading = 'pending' | 'loading' | 'fulfilled'
 
 export const CommentsList: React.FC<TProps> = ({ kids }) => {
   const [loading, setLoading] = useState<TLoading>('pending')

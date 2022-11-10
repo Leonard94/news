@@ -2,29 +2,15 @@ import { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 
 import { getItem } from '../../api/api'
+import { TLoading, TStory } from '../../types'
 
 import { Button } from '../../components/Button/Button'
 import { CommentsList } from '../../components/CommentsList/CommentsList'
 import { Detail } from './components/Detail'
 
-type TStory = {
-  id: number
-  title: string
-  descendants: number
-  url: string
-  score: number
-  time: number
-  type: string
-  parent: number
-  by: string
-  kids: number[]
-}
-
 type TParams = {
   id: string
 }
-
-type TLoading = 'pending' | 'loading' | 'fulfilled'
 
 export const StoryPage = () => {
   const history = useHistory()

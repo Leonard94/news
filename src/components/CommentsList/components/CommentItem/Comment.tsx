@@ -2,41 +2,20 @@ import { useState } from 'react'
 import DOMPurify from 'dompurify'
 import classnames from 'classnames'
 
-import { getTimeAfterDate } from '../../../../helpers/getTimeAfterDate/getTimeAfterDate'
+import { TComment } from '../../../../types'
 import { getComments } from '../../../../api/api'
+import { getTimeAfterDate } from '../../../../helpers/getTimeAfterDate/getTimeAfterDate'
 
 import { ReactComponent as IconTriangle } from '../../../../assets/icons/triangle.svg'
 import styles from './styles.module.scss'
 
-type TProps = {
-  id: number
-  by: string
-  kids: number[]
-  parent: number
-  text: string
-  time: number
-  type: 'comment'
-  small?: boolean
-}
-
-type TComment = {
-  id: number
-  by: string
-  kids: number[]
-  parent: number
-  text: string
-  time: number
-  type: 'comment'
-}
-
-export const Comment: React.FC<TProps> = ({
+export const Comment: React.FC<TComment> = ({
   id,
   by,
   kids,
   parent,
   text,
   time,
-  small,
 }) => {
   const [isShowChildrenComment, setShowChildrenComment] = useState(false)
   const [kidsComments, setKidsComments] = useState<TComment[] | null>(null)
@@ -81,8 +60,8 @@ export const Comment: React.FC<TProps> = ({
       </div>
       {kidsComments && isShowChildrenComment && (
         <ul>
-          {kidsComments.map((kid: any) => (
-            <Comment small key={kid.id} {...kid} />
+          {kidsComments.map((kid) => (
+            <Comment key={kid.id} {...kid} />
           ))}
         </ul>
       )}

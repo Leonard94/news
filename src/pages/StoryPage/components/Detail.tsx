@@ -1,17 +1,8 @@
-import { InfoAboutStory } from '../../../components/InfoAboutStory/InfoAboutStory'
-import styles from './styles.module.scss'
+import { TStory } from '../../../types'
 
-type TStory = {
-  by: string
-  title: string
-  descendants: number
-  url: string
-  score: number
-  time: number
-  type: string
-  parent: number
-  kids: number[]
-}
+import { InfoAboutStory } from '../../../components/InfoAboutStory/InfoAboutStory'
+
+import styles from './styles.module.scss'
 
 export const Detail: React.FC<TStory> = ({
   title,

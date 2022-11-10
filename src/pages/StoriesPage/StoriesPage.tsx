@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import { getStories } from '../../api/api'
 
-import { Skeleton } from './components/Skeleton'
 import { StoriesList } from '../../components/StoriesList/StoriesList'
-import { useHistory } from 'react-router-dom'
+import { Skeleton } from './components/Skeleton'
 
 export const StoriesPage = () => {
   const history = useHistory()

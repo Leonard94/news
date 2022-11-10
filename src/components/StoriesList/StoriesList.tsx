@@ -1,10 +1,11 @@
 import React from 'react'
-import { Button } from '../Button/Button'
+import { TStory } from '../../types'
 
+import { Button } from '../Button/Button'
 import { Story } from '../Story/Story'
 
 type TProps = {
-  list: any
+  list: TStory[]
   handleGetStories: () => void
   isLoadingUpdate?: boolean
 }
@@ -14,6 +15,7 @@ export const StoriesList: React.FC<TProps> = ({
   handleGetStories,
   isLoadingUpdate,
 }) => {
+  console.log('list =>> ', list)
   return (
     <>
       <Button
@@ -24,7 +26,7 @@ export const StoriesList: React.FC<TProps> = ({
       >
         Обновить список
       </Button>
-      {list.map((story: any, index: number) => {
+      {list.map((story, index: number) => {
         return <Story key={story.id} number={index + 1} {...story} />
       })}
       <Button
