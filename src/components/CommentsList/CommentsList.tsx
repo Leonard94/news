@@ -4,7 +4,7 @@ import { getComments } from '../../api/api'
 import { TComment, TLoading } from '../../types'
 
 import { Button } from '../Button/Button'
-import { Comment } from './components/CommentItem/Comment'
+import { Comment } from './components/Comment/Comment'
 
 import styles from './styles.module.scss'
 

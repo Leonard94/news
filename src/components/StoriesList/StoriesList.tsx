@@ -15,7 +15,6 @@ export const StoriesList: React.FC<TProps> = ({
   handleGetStories,
   isLoadingUpdate,
 }) => {
-  console.log('list =>> ', list)
   return (
     <>
       <Button

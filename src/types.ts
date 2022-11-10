@@ -18,7 +18,7 @@ export type TComment = {
   parent: number
   text: string
   time: number
-  type: 'comment'
+  type?: 'comment'
 }
 
 export type TLoading = 'pending' | 'loading' | 'fulfilled'
