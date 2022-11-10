@@ -1,7 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg'
-
 import styles from './styles.module.scss'
 
 export const Header = () => {

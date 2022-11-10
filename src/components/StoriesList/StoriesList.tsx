@@ -1,8 +1,9 @@
 import React from 'react'
+
 import { TStory } from '../../types'
 
 import { Button } from '../Button/Button'
-import { Story } from '../Story/Story'
+import { Story } from './components/Story/Story'
 
 type TProps = {
   list: TStory[]

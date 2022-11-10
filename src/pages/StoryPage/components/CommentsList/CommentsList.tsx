@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
-import { getComments } from '../../api/api'
-import { TComment, TLoading } from '../../types'
+import { getComments } from '../../../../api/api'
+import { TComment, TLoading } from '../../../../types'
 
-import { Button } from '../Button/Button'
+import { Button } from '../../../../components/Button/Button'
 import { Comment } from './components/Comment/Comment'
 
 import styles from './styles.module.scss'

@@ -2,18 +2,16 @@ import { useState } from 'react'
 import DOMPurify from 'dompurify'
 import classnames from 'classnames'
 
-import { TComment } from '../../../../types'
-import { getComments } from '../../../../api/api'
-import { getTimeAfterDate } from '../../../../helpers/getTimeAfterDate/getTimeAfterDate'
+import { TComment } from '../../../../../../types'
+import { getComments } from '../../../../../../api/api'
+import { getTimeAfterDate } from '../../../../../../helpers/getTimeAfterDate/getTimeAfterDate'
 
-import { ReactComponent as IconTriangle } from '../../../../assets/icons/triangle.svg'
+import { ReactComponent as IconTriangle } from '../../../../../../assets/icons/triangle.svg'
 import styles from './styles.module.scss'
 
 export const Comment: React.FC<TComment> = ({
-  id,
   by,
   kids,
-  parent,
   text,
   time,
 }) => {

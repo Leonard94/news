@@ -1,6 +1,6 @@
-import { TStory } from '../../../types'
+import { TStory } from '../../../../types'
 
-import { InfoAboutStory } from '../../../components/InfoAboutStory/InfoAboutStory'
+import { InfoAboutStory } from '../../../../components/InfoAboutStory/InfoAboutStory'
 
 import styles from './styles.module.scss'
 

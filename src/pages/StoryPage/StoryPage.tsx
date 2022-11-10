@@ -5,8 +5,8 @@ import { getItem } from '../../api/api'
 import { TLoading, TStory } from '../../types'
 
 import { Button } from '../../components/Button/Button'
-import { CommentsList } from '../../components/CommentsList/CommentsList'
-import { Detail } from './components/Detail'
+import { CommentsList } from './components/CommentsList/CommentsList'
+import { Detail } from './components/Detail/Detail'
 
 type TParams = {
   id: string

@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 
-import { ReactComponent as IconScore } from '../../assets/icons/triangle.svg'
+import { InfoAboutStory } from '../../../InfoAboutStory/InfoAboutStory'
 
+import { ReactComponent as IconScore } from '../../../../assets/icons/triangle.svg'
 import styles from './styles.module.scss'
-import { InfoAboutStory } from '../InfoAboutStory/InfoAboutStory'
 
 type Tprops = {
   number: number

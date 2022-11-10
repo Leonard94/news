@@ -1,6 +1,10 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const PageNotFound = () => {
-  // Добавить кнопку вернуться назад
-  return <div>PageNotFound</div>
+  return (
+    <div>
+      <h2 style={{ marginBottom: '40px' }}>PageNotFound</h2>
+      <Link to='/'>На главную</Link>
+    </div>
+  )
 }
