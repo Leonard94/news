@@ -24,12 +24,22 @@ export const Header = () => {
           </li>
           <li>
             <NavLink
-              to='/not-found'
+              to='/best'
               exact
               className={styles.link}
               activeClassName={styles.active}
             >
               Лучшее
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to='/top'
+              exact
+              className={styles.link}
+              activeClassName={styles.active}
+            >
+              Топ
             </NavLink>
           </li>
         </ul>

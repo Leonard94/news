@@ -4,15 +4,30 @@ import { getStories } from '../../api/api'
 
 import { Skeleton } from './components/Skeleton'
 import { StoriesList } from '../../components/StoriesList/StoriesList'
+import { useHistory } from 'react-router-dom'
 
-export const HomePage = () => {
+export const StoriesPage = () => {
+  const history = useHistory()
+
   const [loading, setLoading] = useState<'pending' | 'loading' | 'fulfilled'>(
     'pending'
   )
   const [storiesList, setStoriesList] = useState([])
 
+  const getTypeOfPage = () => {
+    const path = history.location.pathname
+
+    if (path === '/top') {
+      return 'top'
+    }
+    if (path === '/best') {
+      return 'best'
+    }
+    return 'new'
+  }
+
   const handleGetStories = () => {
-    getStories('top')
+    getStories(getTypeOfPage())
       .then((list: any) => setStoriesList(list))
       .finally(() => setLoading('fulfilled'))
   }
@@ -26,7 +41,7 @@ export const HomePage = () => {
     return () => {
       clearInterval(timer)
     }
-  }, [])
+  }, [history.location.pathname])
 
   return (
     <>
