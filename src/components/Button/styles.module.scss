@@ -2,23 +2,18 @@
 @import '../../scss/typography.scss';
 
 .btn {
-  padding: 7px 46px;
+  padding: 7px 28px;
   transition: all 0.3s ease;
+  position: relative;
 
   border-radius: 5px;
   border-width: 1px;
   border-style: solid;
 
-  @include btn;
+  @include btn-small;
 
   &_full {
     width: 100%;
-  }
-
-  &_small {
-    @include btn-small;
-
-    padding: 7px 28px;
   }
 
   &:active {
@@ -34,6 +29,15 @@
   &:hover,
   &:focus {
     opacity: 0.85;
+  }
+
+  &:disabled {
+    background: $bg-grey;
+    border-color: $bg-grey;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
@@ -65,5 +69,25 @@
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+.loader {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+
+  animation-name: rotation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

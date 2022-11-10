@@ -48,7 +48,6 @@ export const Comments: React.FC<TProps> = ({ kids }) => {
           {comments.length > 4 && (
             <Button
               typeView='text'
-              small
               onClick={handleGetComments}
               style={{ marginBottom: '50px' }}
             >
@@ -64,7 +63,6 @@ export const Comments: React.FC<TProps> = ({ kids }) => {
 
           <Button
             typeView='primary'
-            small
             onClick={handleGetComments}
             style={{ marginBottom: '50px' }}
           >

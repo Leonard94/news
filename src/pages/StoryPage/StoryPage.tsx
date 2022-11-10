@@ -46,7 +46,7 @@ export const StoryPage = () => {
 
   return (
     <section>
-      <Button typeView='default' small onClick={handleGoBack}>
+      <Button typeView='default' onClick={handleGoBack}>
         К списку новостей
       </Button>
       {loading === 'loading' && <div>Загрузка...</div>}

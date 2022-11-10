@@ -12,6 +12,7 @@ export const StoriesPage = () => {
   const [loading, setLoading] = useState<'pending' | 'loading' | 'fulfilled'>(
     'pending'
   )
+  const [isLoadingUpdate, setIsLoadingUpdate] = useState(false)
   const [storiesList, setStoriesList] = useState([])
 
   const getTypeOfPage = () => {
@@ -27,9 +28,13 @@ export const StoriesPage = () => {
   }
 
   const handleGetStories = () => {
+    setIsLoadingUpdate(true)
     getStories(getTypeOfPage())
       .then((list: any) => setStoriesList(list))
-      .finally(() => setLoading('fulfilled'))
+      .finally(() => {
+        setLoading('fulfilled')
+        setIsLoadingUpdate(false)
+      })
   }
 
   useEffect(() => {
@@ -47,7 +52,11 @@ export const StoriesPage = () => {
     <>
       {loading === 'loading' && <Skeleton />}
       {loading === 'fulfilled' && (
-        <StoriesList list={storiesList} handleGetStories={handleGetStories} />
+        <StoriesList
+          list={storiesList}
+          handleGetStories={handleGetStories}
+          isLoadingUpdate={isLoadingUpdate}
+        />
       )}
     </>
   )

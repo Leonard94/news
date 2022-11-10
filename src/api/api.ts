@@ -20,7 +20,7 @@ export const getStories = async (type: 'new' | 'best' | 'top') => {
     const storiesListId = await axios.get(`${URL}/${type}stories.json`)
 
     const stories = await Promise.all(
-      storiesListId.data.slice(0, 10).map((story: any) => getItem(story))
+      storiesListId.data.slice(0, 100).map((story: any) => getItem(story))
     )
     return stories
   } catch (error) {

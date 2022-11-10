@@ -6,15 +6,20 @@ import { Story } from '../Story/Story'
 type TProps = {
   list: any
   handleGetStories: () => void
+  isLoadingUpdate?: boolean
 }
 
-export const StoriesList: React.FC<TProps> = ({ list, handleGetStories }) => {
+export const StoriesList: React.FC<TProps> = ({
+  list,
+  handleGetStories,
+  isLoadingUpdate,
+}) => {
   return (
     <>
       <Button
         typeView='default'
-        small
         onClick={handleGetStories}
+        isLoading={isLoadingUpdate}
         style={{ marginBottom: '50px' }}
       >
         Обновить список
@@ -24,8 +29,8 @@ export const StoriesList: React.FC<TProps> = ({ list, handleGetStories }) => {
       })}
       <Button
         typeView='default'
-        small
         onClick={handleGetStories}
+        isLoading={isLoadingUpdate}
         style={{ margin: '50px 0' }}
       >
         Обновить список
